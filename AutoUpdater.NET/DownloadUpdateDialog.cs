@@ -102,7 +102,7 @@ namespace AutoUpdaterDotNET
                 }
 
                 ContentDisposition contentDisposition = null;
-                if (!String.IsNullOrWhiteSpace(_webClient.ResponseHeaders?["Content-Disposition"]))
+                if (!string.IsNullOrWhiteSpace(_webClient.ResponseHeaders?["Content-Disposition"]))
                 {
                     contentDisposition = new ContentDisposition(_webClient.ResponseHeaders["Content-Disposition"]);
                 }
@@ -169,7 +169,7 @@ namespace AutoUpdaterDotNET
                             arguments.Append(" --args \"");
                         }
 
-                        arguments.Append(args[i]);
+                        arguments.Append($"\"{args[i]}\"");
                         arguments.Append(i.Equals(args.Length - 1) ? "\"" : " ");
                     }
 
